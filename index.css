@@ -1,0 +1,74 @@
+:root {
+    --blue: #273549;
+    --green: #10B981;
+    --light-blue: #2F3E53;
+    --white: #ffffff;
+    --gray: #D5D4D8;
+}
+
+.card {
+    background-color: var(--blue);
+    padding: 20px;
+    min-width: 300px;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: var(--white);
+    max-width: 280px;
+}
+
+h1 span {
+    color: var(--green);
+}
+
+p {
+    color: var(--gray);
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--green);
+    color: var(--white);
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    width: 100%;
+    background-color: var(--light-blue);
+    margin: 20px auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.pass {
+    background-color: var(--light-blue);
+    color: var(--green);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.note {
+    text-align: center;
+    font-size: 0.85rem;
+}
