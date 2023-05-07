@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
 :root {
     --blue: #273549;
     --green: #10B981;
@@ -9,7 +16,7 @@
 .card {
     background-color: var(--blue);
     padding: 20px;
-    min-width: 300px;
+    margin: 20px;
     max-width: 500px;
     border-radius: 10px;
 }
@@ -32,6 +39,7 @@ h1 span {
 
 p {
     color: var(--gray);
+    margin: 10px 0;
 }
 
 button {
@@ -57,7 +65,8 @@ hr {
 .flex {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    column-gap: 20px;
+    flex-wrap: wrap;
 }
 
 .pass {
