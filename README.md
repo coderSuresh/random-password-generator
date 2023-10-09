@@ -11,7 +11,10 @@
 * [Credits](#credits)
 
 ## Description
-This application generates two random passwords when a user clicks the "Generate Password" button. The user can then copy the password to their clipboard by clicking directly on the password. The passwords are generated using JavaScript. The length of the password is 15 characters.
+This application generates two random passwords when a user clicks the "Generate Password" button. The user can then copy the password to their clipboard by clicking directly on the password. The passwords are generated using JavaScript. 
+
+Users can choose one or more options from uppercase, lowercase, digits, and special characters.
+Users can also choose the length of the password ranging from 8 to 32 characters.
 
 ## Installation
 To install this application, clone the repository and open the index.html file in your browser.
