@@ -1,3 +1,5 @@
+import showAlert from 'https://unpkg.com/alert-for-web@0.1.2/dist/main.js';
+
 const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
 const digitCharacters = "0123456789";
@@ -36,7 +38,11 @@ btn.addEventListener("click", () => {
     const passTwo = generatePassword();
 
     if (passOne.includes('undefined') || passTwo.includes('undefined')) {
-        alert('Please select at least one option.');
+        showAlert({
+            title: 'Error',
+            message: 'Please select at least one option.',
+            level: 'error',
+        });
     } else {
         pass1.textContent = passOne;
         pass2.textContent = passTwo;
@@ -44,14 +50,22 @@ btn.addEventListener("click", () => {
 });
 
 // Allow copying password on click
-function copyPassword(pass) {
+const copyPassword = (pass) => {
     pass.addEventListener("click", () => {
         navigator.clipboard.writeText(pass.textContent)
             .then(() => {
-                alert("Password copied successfully");
+                showAlert({
+                    title: 'Success',
+                    message: 'Successfully copied to clipboard.',
+                    level: 'success'
+                });
             })
             .catch(err => {
-                alert("Can't copy to clipboard" + err);
+                showAlert({
+                    title: 'Error',
+                    message: 'Can not copy to clipboard! Please try again.',
+                    level: 'error',
+                });
             });
     });
 }

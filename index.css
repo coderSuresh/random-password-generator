@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 :root {
@@ -20,6 +20,10 @@
     max-width: 500px;
     width: 100%;
     border-radius: 10px;
+
+    & p {
+        margin-top: 10px;
+    }
 }
 
 body {
@@ -39,7 +43,7 @@ h1 span, .green-text {
     color: var(--green);
 }
 
-p {
+.note {
     color: var(--gray);
     margin: 10px 0;
 }
@@ -52,6 +56,8 @@ button {
     color: var(--white);
     cursor: pointer;
     user-select: none;
+    font-size: inherit;
+    margin-top: 10px;
     -moz-user-select: none;
     -webkit-user-select: none;
 }
