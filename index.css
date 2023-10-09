@@ -107,6 +107,10 @@ input[type="checkbox"]:checked::before {
     background-color: var(--green);
 }
 
+input[type="range"]{
+    accent-color: #10B981;
+}
+
 .pass-container {
     margin-top: 10px;
 }

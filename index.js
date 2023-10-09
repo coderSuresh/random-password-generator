@@ -1,36 +1,60 @@
-const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
-"/"];
+const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
+const digitCharacters = "0123456789";
+const specialCharacters = "~`!@#$%^&*()_-+={}[],|:;<>.?/";
 
-const pass1 = document.querySelector(".pass1")
-const pass2 = document.querySelector(".pass2")
+const pass1 = document.querySelector(".pass1");
+const pass2 = document.querySelector(".pass2");
 
-function generatePassword() {
-    let password = ""
-    for(let i = 0; i < 15; i++) {
-        const random = Math.floor(Math.random() * characters.length)
-        password += characters[random]
+const upperCaseCheckbox = document.querySelector("#uppercase");
+const lowerCaseCheckbox = document.querySelector("#lowercase");
+const digitsCheckbox = document.querySelector("#numbers");
+const specialCheckbox = document.querySelector("#symbols");
+
+const generatePassword = () => {
+    const length = parseInt(document.getElementById('length').value);
+    const characters = [];
+
+    if (upperCaseCheckbox.checked) characters.push(...uppercaseCharacters);
+    if (lowerCaseCheckbox.checked) characters.push(...lowercaseCharacters);
+    if (digitsCheckbox.checked) characters.push(...digitCharacters);
+    if (specialCheckbox.checked) characters.push(...specialCharacters);
+
+    let password = '';
+    for (let i = 0; i < length; i++) {
+        const index = Math.floor(Math.random() * characters.length);
+        password += characters[index];
     }
+
     return password;
 }
 
-const btn = document.querySelector("button") 
+const btn = document.querySelector("button");
 btn.addEventListener("click", () => {
-    pass1.textContent = generatePassword()
-    pass2.textContent = generatePassword()
-})
 
-// allow copy password on click
+    const passOne = generatePassword();
+    const passTwo = generatePassword();
+
+    if (passOne.includes('undefined') || passTwo.includes('undefined')) {
+        alert('Please select at least one option.');
+    } else {
+        pass1.textContent = passOne;
+        pass2.textContent = passTwo;
+    }
+});
+
+// Allow copying password on click
 function copyPassword(pass) {
     pass.addEventListener("click", () => {
-    navigator.clipboard.writeText(pass.textContent)
-        .then(()=>{
-            alert("Password copied successfully")
-        })
-        .catch(err => {
-            alert("Can't copy to clipboard" + err)
-        })
-    })
+        navigator.clipboard.writeText(pass.textContent)
+            .then(() => {
+                alert("Password copied successfully");
+            })
+            .catch(err => {
+                alert("Can't copy to clipboard" + err);
+            });
+    });
 }
 
-copyPassword(pass1)
-copyPassword(pass2)
+copyPassword(pass1);
+copyPassword(pass2);

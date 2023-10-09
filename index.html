@@ -21,8 +21,8 @@ ord generator tool free online, password generator tool online free">
 
         <div class="flex flex-col">
             <div class="flex flex-col">
-                <label for="length">Password length <span id="pass-len"><strong class="green-text">16</strong></span></label>
-                <input type="range" id="length" value="16" min="8" max="32" />
+                <label for="length">Password length <strong><output id="pass_len" class="green-text">16</output></strong></label>
+                <input type="range" id="length" value="16" min="8" max="32" oninput="pass_len.value=value" />
             </div>
 
             <div>
