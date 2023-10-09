@@ -18,6 +18,7 @@
     padding: 20px;
     margin: 20px;
     max-width: 500px;
+    width: 100%;
     border-radius: 10px;
 }
 
@@ -26,6 +27,7 @@ body {
     min-height: 100vh;
     align-items: center;
     justify-content: center;
+    color: var(--white);
 }
 
 h1 {
@@ -33,7 +35,7 @@ h1 {
     max-width: 280px;
 }
 
-h1 span {
+h1 span, .green-text {
     color: var(--green);
 }
 
@@ -65,8 +67,48 @@ hr {
 .flex {
     display: flex;
     justify-content: space-between;
-    column-gap: 20px;
+    gap: 20px;
     flex-wrap: wrap;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+input[type="checkbox"] + label {
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+    content: '';
+    display: inline-block;
+    left: 0;
+    top: 0;
+    background-color: var(--white);
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--green);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '✔';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--green);
+}
+
+.pass-container {
+    margin-top: 10px;
 }
 
 .pass {

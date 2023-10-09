@@ -18,7 +18,35 @@ ord generator tool free online, password generator tool online free">
         <p>Never use an insecure password again.</p>
         <button>Generate passwords</button>
         <hr />
-        <div class="flex">
+
+        <div class="flex flex-col">
+            <div class="flex flex-col">
+                <label for="length">Password length <span id="pass-len"><strong class="green-text">16</strong></span></label>
+                <input type="range" id="length" value="16" min="8" max="32" />
+            </div>
+
+            <div>
+                <input type="checkbox" id="uppercase" checked />
+                <label for="uppercase">Include uppercase letters</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="lowercase" checked />
+                <label for="lowercase">Include lowercase letters</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="numbers" checked />
+                <label for="numbers">Include numbers</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="symbols" checked />
+                <label for="symbols">Include symbols</label>
+            </div>
+        </div>
+
+        <div class="flex pass-container">
             <p class="pass pass1">000000000000000</p>
             <p class="pass pass2">000000000000000</p>
         </div>
